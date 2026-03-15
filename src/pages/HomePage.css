@@ -104,6 +104,18 @@
   letter-spacing: 0.3px;
 }
 
+.zodiac-element {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.zodiac-ruling {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+}
+
 /* What's my sign button */
 .whats-my-sign {
   display: flex;

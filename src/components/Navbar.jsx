@@ -9,6 +9,7 @@ export default function Navbar() {
   const navLinks = [
     { path: '/', label: 'Horoscopes' },
     { path: '/birth-chart', label: 'Birth Chart' },
+    { path: '/compatibility', label: 'Compatibility' },
     { path: '/astro-map', label: 'Astro Map' },
   ];
 

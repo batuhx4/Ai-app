@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import HoroscopePage from './pages/HoroscopePage';
 import BirthChartPage from './pages/BirthChartPage';
 import AstroMapPage from './pages/AstroMapPage';
+import CompatibilityPage from './pages/CompatibilityPage';
 import './App.css';
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/horoscope/:sign" element={<HoroscopePage />} />
           <Route path="/birth-chart" element={<BirthChartPage />} />
           <Route path="/astro-map" element={<AstroMapPage />} />
+          <Route path="/compatibility" element={<CompatibilityPage />} />
         </Routes>
       </main>
     </BrowserRouter>

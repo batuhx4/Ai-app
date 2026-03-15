@@ -1,16 +1,43 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ZODIAC_SIGNS } from '../data/zodiacData';
-import { DAILY_HOROSCOPES, SIGN_DESCRIPTIONS } from '../data/horoscopeData';
+import { DAILY_HOROSCOPES, TOMORROW_HOROSCOPES, WEEKLY_HOROSCOPES, MONTHLY_HOROSCOPES, SIGN_DESCRIPTIONS } from '../data/horoscopeData';
 import './HoroscopePage.css';
 
 const TABS = ['Today', 'Tomorrow', 'This Week', 'This Month'];
 
+function getTabDate(tab) {
+  const now = new Date();
+  if (tab === 'Today') {
+    return now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  if (tab === 'Tomorrow') {
+    const tomorrow = new Date(now);
+    tomorrow.setDate(now.getDate() + 1);
+    return tomorrow.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  }
+  if (tab === 'This Week') {
+    const end = new Date(now);
+    end.setDate(now.getDate() + (6 - now.getDay()));
+    return `Week of ${now.toLocaleDateString('en-US', { month: 'long', day: 'numeric' })} – ${end.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`;
+  }
+  return now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+}
+
 export default function HoroscopePage() {
   const { sign } = useParams();
+  const [activeTab, setActiveTab] = useState('Today');
   const signData = ZODIAC_SIGNS.find(s => s.id === sign);
-  const horoscope = DAILY_HOROSCOPES[sign];
 
-  if (!signData || !horoscope) {
+  const horoscopeMap = {
+    'Today': DAILY_HOROSCOPES[sign],
+    'Tomorrow': TOMORROW_HOROSCOPES[sign],
+    'This Week': WEEKLY_HOROSCOPES[sign],
+    'This Month': MONTHLY_HOROSCOPES[sign],
+  };
+  const horoscope = horoscopeMap[activeTab];
+
+  if (!signData || !DAILY_HOROSCOPES[sign]) {
     return (
       <div className="error-page">
         <p>Sign not found.</p>
@@ -19,9 +46,7 @@ export default function HoroscopePage() {
     );
   }
 
-  const today = new Date().toLocaleDateString('en-US', {
-    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-  });
+  const dateLabel = getTabDate(activeTab);
 
   return (
     <div className="horoscope-page">
@@ -43,13 +68,13 @@ export default function HoroscopePage() {
       </div>
 
       <div className="horo-tabs">
-        {TABS.map((tab, i) => (
-          <span key={tab} className={`horo-tab ${i === 0 ? 'active' : ''}`}>{tab}</span>
+        {TABS.map(tab => (
+          <span key={tab} className={`horo-tab ${tab === activeTab ? 'active' : ''}`} onClick={() => setActiveTab(tab)}>{tab}</span>
         ))}
       </div>
 
       <div className="horo-content">
-        <div className="horo-date">{today}</div>
+        <div className="horo-date">{dateLabel}</div>
 
         <div className="horo-rating">
           {'★'.repeat(horoscope.rating)}{'☆'.repeat(5 - horoscope.rating)}
