@@ -1,0 +1,256 @@
+.horoscope-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.error-page {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: rgba(255,255,255,0.7);
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.85rem;
+  padding: 8px 0;
+  transition: color 0.2s;
+}
+.back-btn:hover { color: #fff; }
+
+.horo-header {
+  padding: 20px 20px 0;
+  background: linear-gradient(180deg, rgba(155, 89, 182, 0.2) 0%, transparent 100%);
+}
+
+.horo-sign-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0 20px;
+}
+
+.horo-symbol-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(0,0,0,0.4));
+  box-shadow: 0 0 30px rgba(155, 89, 182, 0.4);
+  flex-shrink: 0;
+}
+.horo-symbol { font-size: 2.5rem; }
+
+.horo-sign-name {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.horo-dates {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.horo-meta {
+  display: flex;
+  gap: 12px;
+}
+.horo-meta span {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.08);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.horo-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 0 20px;
+}
+.horo-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.horo-tab.active {
+  color: #fff;
+  border-bottom-color: #9b59b6;
+}
+
+.horo-content {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.horo-date {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.horo-rating {
+  font-size: 1.3rem;
+  color: #f0c040;
+  letter-spacing: 2px;
+}
+
+.horo-general {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.9);
+}
+
+.horo-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.horo-section {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(155, 89, 182, 0.2);
+  border-radius: 12px;
+  padding: 16px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.section-icon { font-size: 1.2rem; }
+.section-header h3 {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+}
+.horo-section p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+}
+
+.horo-lucky {
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.2), rgba(240, 192, 64, 0.1));
+  border: 1px solid rgba(240, 192, 64, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+}
+.horo-lucky h3 {
+  font-size: 1rem;
+  color: #f0c040;
+  margin-bottom: 16px;
+}
+.lucky-items {
+  display: flex;
+  gap: 16px;
+}
+.lucky-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+.lucky-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.lucky-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.horo-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.trait-pill {
+  background: rgba(155, 89, 182, 0.25);
+  border: 1px solid rgba(155, 89, 182, 0.4);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+}
+
+.sign-description {
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid rgba(155, 89, 182, 0.6);
+  border-radius: 0 12px 12px 0;
+  padding: 16px;
+}
+.sign-description h3 {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 10px;
+}
+.sign-description p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.7);
+}
+
+.sign-navigation {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  gap: 8px;
+  scrollbar-width: none;
+}
+.sign-navigation::-webkit-scrollbar { display: none; }
+
+.sign-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  min-width: 60px;
+  text-decoration: none;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.sign-nav-item span:first-child { font-size: 1.4rem; }
+.sign-nav-item span:last-child { font-size: 0.65rem; color: rgba(255,255,255,0.5); }
+.sign-nav-item.active {
+  background: rgba(155, 89, 182, 0.3);
+  border-color: rgba(155, 89, 182, 0.6);
+}
+.sign-nav-item.active span:last-child { color: rgba(255,255,255,0.9); }
+.sign-nav-item:hover { background: rgba(155, 89, 182, 0.2); }
+
+@media (min-width: 768px) {
+  .horo-sections { display: grid; grid-template-columns: 1fr 1fr; }
+  .horo-sections .horo-section:first-child { grid-column: 1 / -1; }
+}

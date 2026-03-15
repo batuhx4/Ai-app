@@ -1,0 +1,346 @@
+.birth-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.birth-header {
+  padding: 24px 20px 20px;
+}
+.birth-title-area {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.birth-icon { font-size: 2.5rem; }
+.birth-title-area h1 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.birth-title-area p {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9rem;
+}
+
+.birth-form {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.form-input {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(155, 89, 182, 0.4);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+.form-input:focus {
+  outline: none;
+  border-color: rgba(155, 89, 182, 0.8);
+  background: rgba(255,255,255,0.09);
+}
+.form-input::-webkit-calendar-picker-indicator {
+  filter: invert(0.7);
+}
+.form-hint {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.4;
+}
+
+.location-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.coord-row {
+  display: flex;
+  gap: 10px;
+}
+.coord-row .form-input { flex: 1; min-width: 0; }
+
+.geo-btn {
+  background: rgba(155, 89, 182, 0.2);
+  border: 1px solid rgba(155, 89, 182, 0.5);
+  border-radius: 10px;
+  padding: 10px 16px;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.2s;
+}
+.geo-btn:hover {
+  background: rgba(155, 89, 182, 0.35);
+  color: #fff;
+}
+
+.common-cities {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.city-btn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 4px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.75rem;
+  text-align: center;
+  transition: all 0.2s;
+  font-family: 'Raleway', sans-serif;
+}
+.city-btn:hover {
+  background: rgba(155, 89, 182, 0.25);
+  border-color: rgba(155, 89, 182, 0.5);
+  color: #fff;
+}
+
+.calculate-btn {
+  background: linear-gradient(135deg, #7b2d8b, #9b59b6);
+  border: none;
+  border-radius: 14px;
+  padding: 16px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: 'Cinzel', serif;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(155, 89, 182, 0.4);
+}
+.calculate-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #9b59b6, #bb77d6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(155, 89, 182, 0.5);
+}
+.calculate-btn:disabled { opacity: 0.7; }
+
+.loading-spinner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  animation: pulse 1s infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* Result styles */
+.result-header {
+  padding: 20px 20px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.result-title h2 {
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.result-date {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+}
+.back-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  padding: 4px 0;
+  flex-shrink: 0;
+  text-decoration: none;
+  display: inline-block;
+}
+.back-btn:hover { color: #fff; }
+
+.sun-moon-asc {
+  display: flex;
+  gap: 1px;
+  background: rgba(155, 89, 182, 0.2);
+  margin: 0 20px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(155, 89, 182, 0.3);
+}
+.big-three-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 8px;
+  gap: 4px;
+  background: rgba(0,0,10,0.3);
+}
+.big-three-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.big-three-sign {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+.big-three-degree {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+}
+
+.chart-wheel {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.chart-svg {
+  filter: drop-shadow(0 0 20px rgba(155, 89, 182, 0.3));
+}
+
+.planet-detail {
+  margin: 0 20px;
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.25), rgba(240, 192, 64, 0.1));
+  border: 1px solid rgba(240, 192, 64, 0.3);
+  border-radius: 14px;
+  padding: 16px;
+}
+.planet-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.planet-icon { font-size: 1.8rem; }
+.planet-detail-header h3 {
+  font-size: 1rem;
+  color: #f0c040;
+  margin-bottom: 2px;
+}
+.planet-detail-header p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+.close-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.planet-meaning {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+  font-style: italic;
+}
+.planet-sign-meaning {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+.planet-list {
+  padding: 20px 20px 0;
+}
+.planet-list h3 {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+.planet-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.planet-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+}
+.planet-row:hover {
+  background: rgba(155, 89, 182, 0.15);
+  border-color: rgba(155, 89, 182, 0.3);
+}
+.planet-row.selected {
+  background: rgba(240, 192, 64, 0.1);
+  border-color: rgba(240, 192, 64, 0.4);
+}
+.planet-icon-sm { font-size: 1.1rem; width: 24px; text-align: center; }
+.planet-name { font-size: 0.9rem; color: rgba(255,255,255,0.8); flex: 1; }
+.planet-sign { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+.planet-deg { font-size: 0.8rem; color: rgba(255,255,255,0.4); min-width: 40px; text-align: right; }
+
+.map-cta {
+  padding: 20px;
+}
+.view-map-btn {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(26, 5, 51, 0.8), rgba(45, 27, 105, 0.8));
+  border: 1px solid rgba(155, 89, 182, 0.5);
+  border-radius: 16px;
+  padding: 20px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.view-map-btn span {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+}
+.view-map-btn:hover {
+  background: linear-gradient(135deg, rgba(155, 89, 182, 0.3), rgba(45, 27, 105, 0.9));
+  border-color: rgba(155, 89, 182, 0.8);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .city-grid { grid-template-columns: repeat(4, 1fr); }
+  .planet-grid { display: grid; grid-template-columns: 1fr 1fr; }
+}

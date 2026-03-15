@@ -1,0 +1,184 @@
+.home-page {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-header {
+  padding: 20px 20px 0;
+}
+
+.home-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.home-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 24px;
+}
+
+.home-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.home-tab.active {
+  color: #fff;
+  border-bottom-color: #9b59b6;
+}
+
+/* Zodiac Grid - 3 columns like the image */
+.zodiac-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 10px;
+  padding: 10px 20px 24px;
+}
+
+.zodiac-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+.zodiac-card:hover {
+  transform: scale(1.08);
+}
+.zodiac-card:active {
+  transform: scale(0.96);
+}
+
+.zodiac-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(0,0,0,0.3));
+  box-shadow:
+    0 0 20px rgba(155, 89, 182, 0.3),
+    inset 0 0 20px rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.zodiac-circle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 25%, rgba(255,255,255,0.2), transparent 60%);
+}
+
+.zodiac-symbol {
+  font-size: 2.8rem;
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.6));
+  position: relative;
+  z-index: 1;
+}
+
+.zodiac-name {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* What's my sign button */
+.whats-my-sign {
+  display: flex;
+  justify-content: center;
+  padding: 0 20px 32px;
+}
+
+.sign-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.8);
+  padding: 10px 32px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.sign-btn:hover {
+  background: rgba(155, 89, 182, 0.3);
+  border-color: rgba(155, 89, 182, 0.7);
+  color: #fff;
+}
+
+/* Feature Cards */
+.home-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(155, 89, 182, 0.3);
+  border-radius: 16px;
+  padding: 16px 20px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.feature-card:hover {
+  background: rgba(155, 89, 182, 0.15);
+  border-color: rgba(155, 89, 182, 0.6);
+  transform: translateY(-2px);
+}
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.feature-text {
+  flex: 1;
+}
+.feature-text h3 {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.feature-text p {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+.feature-arrow {
+  color: rgba(255,255,255,0.4);
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .home-page { max-width: 800px; }
+  .zodiac-grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .zodiac-circle { width: 110px; height: 110px; }
+  .home-features { flex-direction: row; }
+  .feature-card { flex: 1; }
+}
